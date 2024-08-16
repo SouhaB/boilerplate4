@@ -7,7 +7,7 @@ let bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-let uri = 'mongodb+srv://souhaept:JbZpBF6oOYLUkhjF@cluster0.vgda8.mongodb.net/manage?retryWrites=true&w=majority&appName=Cluster0';
+let uri = process.env.URI;
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
 	console.log('Database connection successful');
